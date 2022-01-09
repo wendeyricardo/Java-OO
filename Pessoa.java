@@ -1,7 +1,26 @@
 public class Pessoa {
-    public String nome;
-    public Integer idade;
+    //atributos
+    private String nome;
+    private Integer idade;
 
+
+    //getters e setters
+    public void setNome(String nome){
+        //aqui pode ter validações e outros
+        this.nome = nome;
+    }
+
+    public String getNome(){
+        return this.nome;
+    }
+
+    public Integer getIdade(){
+        return this.idade;
+    }
+
+    public void setIdade(Integer idade){
+        this.idade = idade;
+    }    
 }
 
 /**

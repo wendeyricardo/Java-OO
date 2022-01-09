@@ -4,20 +4,24 @@ public class App{
 
         //que estou instanciando uma classe, construindo um objeto
         Pessoa pessoa1 = new Pessoa();
-        pessoa1.nome = "Fulano";
-        pessoa1.idade = 21;
+        pessoa1.setNome("Fulano");
+        pessoa1.setIdade(21);
 
-        System.out.println(pessoa1.nome);
-        System.out.println(pessoa1.idade);
+        System.out.println(pessoa1.getNome());
+        System.out.println(pessoa1.getIdade());
 
         Carro carro1 = new Carro();
-        carro1.modelo = "jeep";
-        carro1.ano = 2021;
-        carro1.cor = "preto";
+        carro1.setModelo("honda civic");
+        carro1.setAno(2019);
+        carro1.setCor("preto");
 
-        System.out.println(carro1.modelo);
-        System.out.println(carro1.cor);
-        System.out.println(carro1.ano);
+        System.out.println(carro1.getModelo());
+        System.out.println(carro1.getAno());
+        System.out.println(carro1.getCor());
 
+        Carro meuCarro = new Carro("Fiat toro", 2020, "Branco");
+        System.out.println(meuCarro.getModelo());
+        System.out.println(meuCarro.getAno());
+        System.out.println(meuCarro.getCor());
     }
 }
