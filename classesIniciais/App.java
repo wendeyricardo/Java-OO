@@ -1,6 +1,20 @@
+package classesIniciais;
 public class App{
     public static void main(String[] args) {
         System.out.println("Aprendendo POO com java");
+
+/*
+        #tipos primitivos#
+        byte tipoByte = Byte.MAX_VALUE;
+        Short tipShort = Short.MAX_VALUE;
+        Integer tipoInteger = 2147483647;//Integer.MAX_VALUE;
+        Long tipoLong = 9223372036854775807L;//Long.MAX_VALUE;
+        Float tipFloat = 3.4028235E38F;//Float.MAX_VALUE;
+        Double tipDouble = 1.7976931348623157E308;//Double.MAX_VALUE;
+        String tipoString = "sou um texto";
+        char tipoChar = 'S';
+        Boolean tipBoolean = false; // false ou true
+        */
 
         //que estou instanciando uma classe, construindo um objeto
         Pessoa pessoa1 = new Pessoa();

@@ -1,3 +1,4 @@
+package classesIniciais;
 public class Pessoa {
     //atributos
     private String nome;
