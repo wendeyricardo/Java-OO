@@ -83,4 +83,15 @@ public class ContaBancaria {
         return valor;
     }
     //#endregion
+
+    //#region
+    public void transferir(Double valor, ContaBancaria contaDestino){
+
+        //efetua um saque na conta atual
+        this.sacar(valor);
+        
+        //efetua o deposito na conta de destino
+        contaDestino.depositar(valor);
+    }
+    //#endregion
 }
