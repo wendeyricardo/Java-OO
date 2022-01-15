@@ -58,10 +58,10 @@ public class App {
         // ter algo que possa ser a movimentação
         // lista de movimentações
 
-        Movimentacao movimentacao = new Movimentacao("saque", 100.0);
-        System.out.println(movimentacao);
-
-        System.out.println( movimentacao.toString());
+        // conta corrente
+        conta.imprimirExtrato();
+        //conta poupança
+        conta2.imprimirExtrato();
 
         }
         

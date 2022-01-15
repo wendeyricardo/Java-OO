@@ -1,22 +1,25 @@
 package src.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.InputMismatchException;
 
 public abstract class ContaBancaria {
 
     //#region atributos
-    private String agencia;
+    protected String agencia;
 
-    private String conta;
+    protected String conta;
 
-    private Integer digito;
+    protected Integer digito;
 
-    private Double saldo;  
+    protected Double saldo;  
     
-    private Date dataAbertura;
+    protected Date dataAbertura;
 
-    private Double VALOR_MINIMO_DEPOSITO = 10.0;
+    protected ArrayList<Movimentacao> movimentacoes;
+
+    protected Double VALOR_MINIMO_DEPOSITO = 10.0;
     //#endregion 
 
     //#region construtores
@@ -26,6 +29,16 @@ public abstract class ContaBancaria {
         this.digito = digito;
         this.saldo = saldoInicial;
         this.dataAbertura = new Date();
+
+        //se não instancia, vai dar uma excpetion de nullPointerException
+        this.movimentacoes = new ArrayList<Movimentacao>();
+
+        // criando a primeira movimentação
+        Movimentacao movimentacao = new Movimentacao("abertura de conta", saldoInicial);
+        
+        // aqui estou salvando a movimentação dentro do meu array de movimentações.
+        // aqui estou iniciando o extrato bancario
+        this.movimentacoes.add(movimentacao);
     }
     //#endregion
 
@@ -74,6 +87,10 @@ public abstract class ContaBancaria {
 
         //efetua o deposito somando o valor ao saldo
         this.saldo += valor;
+
+        // aqui faço uma movimentação no extrato
+        Movimentacao movimentacao = new Movimentacao("deposito", valor);
+        this.movimentacoes.add(movimentacao);
     }
 
     public Double sacar(Double valor){
@@ -86,6 +103,12 @@ public abstract class ContaBancaria {
 
         // aqui removemos o valor de saque do saldo atual
         this.saldo -= valor;
+
+        // aqui faço uma movimentação no extrato
+        Movimentacao movimentacao = new Movimentacao("retirada de valor", valor);
+        this.movimentacoes.add(movimentacao);
+
+
 
         //retorna o valor sacado ao usuario
         return valor;
@@ -102,4 +125,7 @@ public abstract class ContaBancaria {
         contaDestino.depositar(valor);
     }
     //#endregion
+
+    //metodo abstrato obriga as classes que estao herdando de implementarem este metodo
+    public abstract void imprimirExtrato();
 }
