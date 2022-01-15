@@ -2,7 +2,9 @@ package BackEndPOO2;
 
 import BackEndPOO2.src.model.Camareira;
 import BackEndPOO2.src.model.Cliente;
+import BackEndPOO2.src.model.EnumTipo;
 import BackEndPOO2.src.model.Gerente;
+import BackEndPOO2.src.model.Quarto;
 import BackEndPOO2.src.model.Recepcionista;
 
 public class App2 {
@@ -27,5 +29,20 @@ public class App2 {
 
         gerente1.atenderOTelefone();
         gerente1.falarIngles();
+
+        Quarto quarto1 = new Quarto();
+        quarto1.setNumero("206A");
+        quarto1.setValor(100.0);
+        quarto1.setTipo(EnumTipo.BASICO);
+
+        Quarto quarto2 = new Quarto();
+        quarto2.setNumero("306A");
+        quarto2.setValor(200.0);
+        quarto2.setTipo(EnumTipo.PRESIDENCIAL);
+
+
+        System.out.println(quarto2.getTipo());
+        System.out.println(quarto2.getTipo().getValor());
+
     }
 }
