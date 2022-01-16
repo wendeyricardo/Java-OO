@@ -1,0 +1,9 @@
+O que é SOLID?
+
+Solid é um termo/acrînimo de 5 principios da orientação a objetos.
+
+1º S - Single Responsiblity Principle - Principio de responsabilidade unica
+2º O - Open-Closed Principle - Principio do aberto e fechado
+3º L - Liskov Substitution Principle - princípio da substituição de Liskov
+4º I - Interface Segregation Principle - princípio da Segregação da Interface
+5º D - Dependency Inversion Principle - princípio da inversão da dependência
